@@ -25,7 +25,7 @@ namespace LongestCommonSubsequence
          * second argument : a list of objects
          * third argument : a function that compares the elements of the two lists
          * this function should return TRUE if two elements are equal and FALSE if not!
-         * bool IsEqual(T a,T b)
+         * public static bool IsEqual(T a,T b)
          */
         public LCS(List<T> FirstSequence, List<T> SecondSequence, Func<T,T,bool> IsEqual)
         {
