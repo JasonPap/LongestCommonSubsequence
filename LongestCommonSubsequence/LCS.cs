@@ -120,6 +120,7 @@ namespace LongestCommonSubsequence
 
         /* This method will return a List<T> with the common subsequence if the
          * LCS object has been properly initialized and the Run() method is done.
+         * Will throw an Exeption if IsEqual() raise an Exeption.
          * In any other case it will throw a InvalidOperationException. 
          */
         public List<T> GetLCS()
@@ -143,6 +144,9 @@ namespace LongestCommonSubsequence
         #endregion
 
         #region PRIVATE METHODS
+        /* Used by the GetLCS() method, this method finds and return the elements 
+         * (of type T) of the longest common subsequence in a List<T>. 
+         */
         private List<T> BacktrackPath(int i, int j)
         {
             List<T> result = new List<T>();
@@ -181,6 +185,9 @@ namespace LongestCommonSubsequence
             return result;
         }
 
+        /* This function called by the Run() method and is executed by one thread 
+         * that computes the upper rigth triangle of the LCSarray
+         */
         private void HorizontalLCS()
         {
             int i;
@@ -236,6 +243,9 @@ namespace LongestCommonSubsequence
             }
         }
 
+        /* This function called by the Run() method and is executed by one thread 
+         * that computes the lower left triangle of the LCSarray
+         */
         private void VerticalLCS()
         {
             int i;
@@ -290,6 +300,8 @@ namespace LongestCommonSubsequence
             }
         }
 
+        /* Return the biggest of the two Int16 passed as arguments.
+         */
         private Int16 Max(short p1, short p2)
         {
             if (p1 > p2)
