@@ -229,3 +229,7 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+*.config
+*.csproj
+*.sln
+LongestCommonSubsequence/Properties/AssemblyInfo.cs
