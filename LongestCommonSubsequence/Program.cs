@@ -1,4 +1,9 @@
-﻿
+﻿/*
+ *  Project:    Longest Common Subsequence C# generic class
+ *  File:       Program.cs
+ *  Author:     Jason Papapanagiotakis
+ *  Github:     https://github.com/JasonPap/LongestCommonSubsequence
+ */
 using System;
 using System.Collections.Generic;
 namespace LongestCommonSubsequence

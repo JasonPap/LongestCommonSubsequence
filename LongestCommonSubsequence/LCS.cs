@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ *  Project:    Longest Common Subsequence C# generic class
+ *  File:       LCS.cs
+ *  Author:     Jason Papapanagiotakis
+ *  Github:     https://github.com/JasonPap/LongestCommonSubsequence
+ */
+using System;
 using System.Collections.Generic;
 using System.Threading;
 
