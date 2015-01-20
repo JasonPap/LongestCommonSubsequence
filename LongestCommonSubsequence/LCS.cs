@@ -203,46 +203,22 @@ namespace LongestCommonSubsequence
             {
                 for (j = verticalDone + 1; j < secondSequence.Count + 1; j++)
                 {
-                    //LocksArray[i].EnterReadLock();
-                    try
-                    {
-                        if (LCSarray[i, j] > -1)    //this case has been filled
-                            continue;               //continue to the next one
-                    }
-                    finally
-                    {
-                        //LocksArray[i].ExitReadLock();
-                    }
+
+                    if (LCSarray[i, j] > -1)    //this case has been filled
+                        continue;               //continue to the next one
+
 
                     //if the case hasn't been filled then calculate the value
                     if (isEqual(firstSequence[i - 1], secondSequence[j - 1]))
                     {
-                        //LocksArray[i].EnterWriteLock();
-                        //Console.WriteLine("H");
-                        try
-                        {
-                            Int16 val = LCSarray[i - 1, j - 1];
-                            val++;
-                            LCSarray[i, j] = val;
-                        }
-                        finally
-                        {
-                            //LocksArray[i].ExitWriteLock();
-                        }
+                        Int16 val = LCSarray[i - 1, j - 1];
+                        val++;
+                        LCSarray[i, j] = val;
                     }
                     else
                     {
                         Int16 val = Max(LCSarray[i - 1, j], LCSarray[i, j - 1]);
-                        //LocksArray[i].EnterWriteLock();
-                        try
-                        {
-                            LCSarray[i, j] = val;
-                        }
-                        finally
-                        {
-                            // LocksArray[i].ExitWriteLock();
-                        }
-
+                        LCSarray[i, j] = val;
                     }
                 }
                 horizontalDone++;
@@ -261,45 +237,21 @@ namespace LongestCommonSubsequence
             {
                 for (i = horizontalDone + 1; i < firstSequence.Count + 1; i++)
                 {
-                    //LocksArray[i].EnterReadLock();
-                    try
-                    {
-                        if (LCSarray[i, j] > -1)    //this case has been filled
-                            continue;               //continue to the next one
-                    }
-                    finally
-                    {
-                        //LocksArray[i].ExitReadLock();
-                    }
+                    if (LCSarray[i, j] > -1)    //this case has been filled
+                         continue;               //continue to the next one
+
 
                     //if the case hasn't been filled then calculate the value
                     if (isEqual(firstSequence[i - 1], secondSequence[j - 1]))
                     {
-                        //LocksArray[i].EnterWriteLock();
-                        // Console.WriteLine("V");
-                        try
-                        {
-                            Int16 val = LCSarray[i - 1, j - 1];
-                            val++;
-                            LCSarray[i, j] = val;
-                        }
-                        finally
-                        {
-                            //LocksArray[i].ExitWriteLock();
-                        }
+                        Int16 val = LCSarray[i - 1, j - 1];
+                        val++;
+                        LCSarray[i, j] = val;
                     }
                     else
                     {
                         Int16 val = Max(LCSarray[i - 1, j], LCSarray[i, j - 1]);
-                        //LocksArray[i].EnterWriteLock();
-                        try
-                        {
-                            LCSarray[i, j] = val;
-                        }
-                        finally
-                        {
-                            // LocksArray[i].ExitWriteLock();
-                        }
+                        LCSarray[i, j] = val;
                     }
                 }
                 verticalDone++;
